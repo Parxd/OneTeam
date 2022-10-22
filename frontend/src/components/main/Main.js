@@ -8,10 +8,10 @@ import "../../App.css";
 
 export default function () {
   return (
-    <div>
+    <body className='h-screen bg-gray-900 from-green-200 to-green-500'>
       <NavBar />
       <Header />
       <UsersSection />
-    </div>
+    </body>
   );
 }
