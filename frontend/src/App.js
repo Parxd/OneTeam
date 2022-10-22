@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div class='appContained'>
+    <div className='appContained'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Login />}></Route>
