@@ -1,19 +1,21 @@
-import React, { useState, Component } from "react";
+import React from "react";
 
 // Component Imports
-import NavBar from "./components/main/NavBar";
-import Header from "./components/main/Header";
-import UsersSection from "./components/main/UsersSection";
-
-// Style Imports
-import "./App.css";
+import Main from "./components/main/Main";
+import Login from "./components/Login";
+import Profile from "./components/Profile";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div class='appContained'>
-      <NavBar />
-      <Header />
-      <UsersSection />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login />}></Route>
+          <Route path='/main' element={<Main />}></Route>
+          <Route path='/profile' element={<Profile />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
