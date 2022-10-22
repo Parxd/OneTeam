@@ -72,6 +72,10 @@ const RegisterForm = () => {
           <GoogleButton class="flex mx-auto focus:outline-none hover:bg-blue-600 rounded text-lg"/>
         </div>
 
+        <div class="p-2 w-full">
+          <p className="text-center leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Existing user? <a class="text-gray-400 border-0 focus:outline-none hover:text-blue-600" href="../login">Log In</a></p>
+        </div>
+
     </div>
     </section>
   );
