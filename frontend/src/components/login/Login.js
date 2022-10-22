@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import { GoogleButton } from "react-google-button";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../firebase";
+import LoginForm from "./LoginForm";
 
 export default function Login() {
   const googleSignIn = () => {
@@ -26,6 +27,7 @@ export default function Login() {
       <NavBar />
       <Header />
       <GoogleButton onClick={handleGoogleSignIn} />
+      <LoginForm />
     </body>
   );
 }

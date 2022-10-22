@@ -9,6 +9,7 @@ const Header = () => {
             Sign Up for OneTeam
           </h1>
           <p className='text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto'>
+            Find teammates by interests, majors and skills
           </p>
         </div>
       </div>
