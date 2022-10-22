@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { doc, getDoc, getDocs, collection } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const UserCard = () => {
   const [users, setUsers] = useState([
@@ -6,7 +8,7 @@ const UserCard = () => {
       firstname: "Harry",
       lastname: "lastname",
       majors: "CS",
-      skills: "Java",
+      skills: [],
       contact: "jiashu.huang@vanderbilt.edu",
       interests: "",
       status: 0,
@@ -15,12 +17,30 @@ const UserCard = () => {
       firstname: "abc",
       lastname: "lastname",
       majors: "CS",
-      skills: "Java",
+      skills: [],
       contact: "123456",
       interests: "",
       status: 0,
     },
   ]);
+
+  const usersCollectionRef = collection(db, "user");
+
+  // Fetch the required data using the get() method
+  useEffect(() => {
+    const getUsers = async () => {
+      const data = await getDocs(usersCollectionRef);
+      setUsers(
+        data.docs.map((doc) => ({
+          ...doc.data(),
+        }))
+      );
+    };
+    getUsers();
+
+    console.log(users);
+  }, []);
+
   return (
     <div>
       {users.map((user) => {
@@ -35,7 +55,12 @@ const UserCard = () => {
               </span>
             </div>
             <div className='md:flex-grow'>
-              <p className='leading-relaxed'>Skills : ...</p>
+              <p className='leading-relaxed'>
+                Skills :
+                {user.skills.map((skill) => {
+                  return <div>{skill}</div>;
+                })}
+              </p>
               <button className='text-blue-400 inline-flex items-center mt-4'>
                 Contact
                 <svg
