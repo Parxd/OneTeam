@@ -1,9 +1,9 @@
 import React, { useState, Component } from "react";
 
 // Component Imports
-import NavBar from "./components/NavBar/NavBar";
-import Header from "./components/Header/Header";
-import UsersSection from "./components/UsersSection/UsersSection";
+import NavBar from "./components/main/NavBar";
+import Header from "./components/main/Header";
+import UsersSection from "./components/main/UsersSection";
 
 // Style Imports
 import "./App.css";
