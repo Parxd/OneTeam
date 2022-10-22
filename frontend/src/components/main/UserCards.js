@@ -3,17 +3,19 @@ import React, { useState } from "react";
 const UserCard = () => {
   const [users, setUsers] = useState([
     {
-      name: "Harry",
+      firstname: "Harry",
+      lastname: "lastname",
       majors: "CS",
-      skill: "Java",
+      skills: "Java",
       contact: "jiashu.huang@vanderbilt.edu",
       interests: "",
       status: 0,
     },
     {
-      name: "abc",
+      firstname: "abc",
+      lastname: "lastname",
       majors: "CS",
-      skill: "Java",
+      skills: "Java",
       contact: "123456",
       interests: "",
       status: 0,
