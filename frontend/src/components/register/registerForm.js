@@ -7,13 +7,32 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 // Imports for email & password login functionality
 import { useEffect, useState } from "react";
-import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 const RegisterForm = () => {
   // Google registration functionality
 
   // Email & Password register functionality
-  
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+  });
+  const register = async () => {
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   // Page structure
   return (
     <section class="text-gray-400 bg-gray-900 body-font relative">
@@ -29,6 +48,9 @@ const RegisterForm = () => {
                     type="text" 
                     id="Email" 
                     name="Email"
+                    onChange={(event) => {
+                      setRegisterEmail(event.target.value);
+                    }}
                     class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
               </div>
             </div>
@@ -42,6 +64,9 @@ const RegisterForm = () => {
                     type="Password" 
                     id="Password" 
                     name="Password"
+                    onChange={(event) => {
+                      setRegisterPassword(event.target.value);
+                    }}
                     class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
               </div>
             </div>
@@ -50,7 +75,7 @@ const RegisterForm = () => {
               <div class="relative">
                   <label 
                     for="Password" 
-                    class="leading-7 text-sm text-gray-400">Password</label>
+                    class="leading-7 text-sm text-gray-400">Confirm Password</label>
                   <input 
                     type="Password" 
                     id="Confirm Password" 
@@ -59,7 +84,7 @@ const RegisterForm = () => {
               </div>
             </div>
             <div class="p-2 w-full">
-            <button class="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Register</button>
+            <button onClick={register} class="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Register</button>
             </div>
         </div>
         </div>

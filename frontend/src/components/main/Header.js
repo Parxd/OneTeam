@@ -9,7 +9,7 @@ const Header = () => {
             Find yourself a teammate
           </h1>
           <p className='text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto'>
-            Look at people's interests, majors and skills
+            Explore people's interests, majors and skills
           </p>
         </div>
       </div>
