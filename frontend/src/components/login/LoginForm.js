@@ -1,6 +1,25 @@
 import React from "react";
 
+import { GoogleButton } from "react-google-button";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../../firebase";
+
 const LoginForm = () => {
+  const googleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider);
+  };
+  console.log(googleSignIn);
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   return (
     <section class="text-gray-400 bg-gray-900 body-font relative">
     <div class="container px-5 py-24 mx-auto">
@@ -23,6 +42,12 @@ const LoginForm = () => {
             </div>
         </div>
         </div>
+
+
+        <div class="p-2 w-full">
+          <GoogleButton onClick={handleGoogleSignIn} class="flex mx-auto focus:outline-none hover:bg-blue-600 rounded text-lg"/>
+        </div>
+
     </div>
     </section>
   );
