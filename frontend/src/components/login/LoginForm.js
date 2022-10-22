@@ -84,7 +84,9 @@ const LoginForm = () => {
             </div>
             </div>
             <div class="p-2 w-full">
-            <button class="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Sign In</button>
+            <button
+              onClick={login} 
+              class="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Login</button>
             </div>
         </div>
         </div>
