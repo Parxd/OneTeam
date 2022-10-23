@@ -91,7 +91,7 @@ const LoginForm = () => {
             <div class='p-2 w-full'>
               <button
                 onClick={login}
-                class='flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg'
+                class='flex mx-auto text-white bg-blue-900 border-0 py-2 px-8 focus:outline-none hover:bg-blue-800 rounded text-lg'
               >
                 Login
               </button>
@@ -106,7 +106,7 @@ const LoginForm = () => {
         <div class='p-2 w-full'>
           <GoogleButton
             onClick={handleGoogleSignIn}
-            class='flex mx-auto focus:outline-none hover:bg-blue-600 rounded text-lg'
+            class='flex mx-auto focus:outline-none hover:bg-blue-900 rounded text-lg'
           />
         </div>
 
