@@ -31,7 +31,9 @@ const NavBar = () => {
           <span className='ml-3 text-xl'>OneTeam</span>
         </a>
         <nav className='md:ml-auto flex flex-wrap items-center text-base justify-center'>
-          <a className='mr-5 hover:text-white'>Profile</a>
+          <a className='mr-5 hover:text-white' href='/profile'>
+            Profile
+          </a>
         </nav>
 
         <button
