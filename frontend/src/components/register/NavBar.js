@@ -2,7 +2,7 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <header className='text-gray-400 bg-gray-900 body-font'>
+    <header className='text-gray-400 bg-gradient-to-l from-gray-700 via-gray-900 to-black'>
       <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
         <a className='flex title-font font-medium items-center text-white mb-4 md:mb-0'>
           <svg
