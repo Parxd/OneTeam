@@ -56,7 +56,7 @@ const LoginForm = () => {
       <div class='container px-5 py-24 mx-auto'>
         <div class='lg:w-1/2 md:w-2/3 mx-auto'>
           <div class='flex flex-wrap -m-2'>
-            <div class='p-2 w-1/2'>
+            <div class='p-2 w-full'>
               <div class='relative'>
                 <label for='Email' class='leading-7 text-sm text-gray-400'>
                   Email
@@ -72,7 +72,7 @@ const LoginForm = () => {
                 ></input>
               </div>
             </div>
-            <div class='p-2 w-1/2'>
+            <div class='p-2 w-full'>
               <div class='relative'>
                 <label for='Password' class='leading-7 text-sm text-gray-400'>
                   Password
