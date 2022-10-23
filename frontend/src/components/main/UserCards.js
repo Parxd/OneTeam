@@ -8,7 +8,7 @@ const UserCard = () => {
       firstname: "Harry",
       lastname: "lastname",
       majors: "CS",
-      skills: [],
+      skills: "",
       contact: "jiashu.huang@vanderbilt.edu",
       interests: "",
       status: 0,
@@ -17,7 +17,7 @@ const UserCard = () => {
       firstname: "abc",
       lastname: "lastname",
       majors: "CS",
-      skills: [],
+      skills: "",
       contact: "123456",
       interests: "",
       status: 0,
@@ -55,12 +55,7 @@ const UserCard = () => {
               </span>
             </div>
             <div className='md:flex-grow'>
-              <p className='leading-relaxed'>
-                Skills :
-                {user.skills.map((skill) => {
-                  return <div>{skill}</div>;
-                })}
-              </p>
+              <p className='leading-relaxed'>Skills: {user.skills}</p>
               <button className='text-blue-400 inline-flex items-center mt-4'>
                 Contact
                 <svg
