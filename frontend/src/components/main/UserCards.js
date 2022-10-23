@@ -57,8 +57,8 @@ const UserCard = () => {
     <div>
       {users.map((user) => {
         return (
-          <div className='py-8 flex flex-wrap md:flex-nowrap'>
-            <div className='md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col'>
+          <div className='py-8 flex flex-wrap md:flex-nowrap border border-gray-700 my-5 border-opacity-75 p-6 rounded-lg'>
+            <div className='md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col '>
               <span className='font-semibold title-font text-white'>Name: {user.name}</span>
               <span className='mt-1 text-gray-500 text-sm'>Majors: {user.majors}</span>
               <span className='mt-1 text-gray-500 text-sm'>{availabilityText(user.status)}</span>
