@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const InfoPrompts = () => {
   const [name, setName] = useState();
-  const [email, setEmail] = useState();
+  const [contact, setContact] = useState();
   const [majors, setMajors] = useState();
   const [skills, setSkills] = useState();
   const [interests, setInterests] = useState();
@@ -18,7 +18,7 @@ const InfoPrompts = () => {
     try {
       await addDoc(usersCollectionRef, {
         name: name,
-        email: email,
+        contact: contact,
         majors: majors,
         skills: skills,
         interests: interests,
@@ -68,9 +68,9 @@ const InfoPrompts = () => {
                     name='email'
                     class='w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     placeholder='Email ID or phone number'
-                    value={email}
+                    value={contact}
                     onChange={(e) => {
-                      setEmail(e.target.value);
+                      setContact(e.target.value);
                     }}
                   ></input>
                 </div>
