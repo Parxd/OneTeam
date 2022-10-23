@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <section className='text-gray-400 bg-gray-900 body-font'>
+    <section className='text-gray-400 bg-gradient-to-l from-gray-700 via-gray-900 to-black'>
       <div className='container px-5 py-5 mx-auto'>
         <div className='text-center mb-5'>
           <h1 className='sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4'>

@@ -5,9 +5,8 @@ import NavBar from "./NavBar";
 import RegisterForm from "./registerForm";
 
 export default function Register() {
-  
   return (
-    <body className='h-screen bg-gray-900 from-green-200 to-green-500'>
+    <body className='h-screen bg-gradient-to-l from-gray-700 via-gray-900 to-black'>
       <NavBar />
       <Header />
       <RegisterForm />

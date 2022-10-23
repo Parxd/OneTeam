@@ -46,13 +46,13 @@ const LoginForm = () => {
       );
       navigate("/main");
     } catch (error) {
-      console.log(error.message);
+      alert("Password is incorrect or account does not exist");
     }
   };
 
   // Page structure
   return (
-    <section class='text-gray-400 bg-gray-900 body-font relative'>
+    <section class='text-gray-400 bg-gradient-to-l from-gray-700 via-gray-900 to-black body-font relative'>
       <div class='container px-5 py-24 mx-auto'>
         <div class='lg:w-1/2 md:w-2/3 mx-auto'>
           <div class='flex flex-wrap -m-2'>
@@ -78,7 +78,7 @@ const LoginForm = () => {
                   Password
                 </label>
                 <input
-                  type='text'
+                  type='Password'
                   id='Password'
                   name='Password'
                   onChange={(event) => {

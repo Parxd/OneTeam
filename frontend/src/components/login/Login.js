@@ -7,7 +7,7 @@ import LoginForm from "./LoginForm";
 export default function Login() {
   
   return (
-    <body className='h-screen bg-gray-900 from-green-200 to-green-500'>
+    <body className='h-screen bg-gradient-to-l from-gray-700 via-gray-900 to-black'>
       <NavBar />
       <Header />
       <LoginForm />
