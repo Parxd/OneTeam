@@ -1,6 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase";
+import { signOut } from "firebase/auth";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const logout = async () => {
+    signOut(auth);
+    navigate("/")
+  };
   return (
     <header className='text-gray-400 bg-gray-900 body-font'>
       <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
@@ -24,7 +32,9 @@ const NavBar = () => {
           <a className='mr-5 hover:text-white'>Profile</a>
         </nav>
 
-        <button className='inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0'>
+        <button 
+          onClick={logout}
+          className='inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0'>
           Logout
           <svg
             fill='none'
