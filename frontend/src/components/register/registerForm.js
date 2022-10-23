@@ -1,6 +1,7 @@
 import React from "react";
 import { auth } from "../../firebase";
 
+
 // Imports for Google sign-in functionality
 import { GoogleButton } from "react-google-button";
 
