@@ -5,8 +5,7 @@ import { db } from "../../firebase";
 const UserCard = () => {
   const [users, setUsers] = useState([
     {
-      firstname: "Harry",
-      lastname: "lastname",
+      name: "some name",
       majors: "CS",
       skills: "",
       contact: "jiashu.huang@vanderbilt.edu",
@@ -14,13 +13,12 @@ const UserCard = () => {
       status: 0,
     },
     {
-      firstname: "abc",
-      lastname: "lastname",
+      name: "abc",
       majors: "CS",
       skills: "",
       contact: "123456",
-      interests: "",
-      status: 0,
+      interests: "idk what i'm doing",
+      status: 1,
     },
   ]);
 
@@ -41,36 +39,34 @@ const UserCard = () => {
     console.log(users);
   }, []);
 
+
+  // Availability/status flag
+  function availabilityText (userStatus) {
+    if(userStatus==0) {
+      return 'Available';
+    } else if (userStatus==1) {
+      return 'Incomplete Team';
+    } else if (userStatus==2) {
+      return 'Unavailable';
+    } else {
+      return 'Uknown';
+    }
+  }
+
   return (
     <div>
       {users.map((user) => {
         return (
           <div className='py-8 flex flex-wrap md:flex-nowrap'>
             <div className='md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col'>
-              <span className='font-semibold title-font text-white'>
-                Name: {user.name}
-              </span>
-              <span className='mt-1 text-gray-500 text-sm'>
-                Majors: {user.majors}
-              </span>
+              <span className='font-semibold title-font text-white'>Name: {user.name}</span>
+              <span className='mt-1 text-gray-500 text-sm'>Majors: {user.majors}</span>
+              <span className='mt-1 text-gray-500 text-sm'>{availabilityText(user.status)}</span>
             </div>
             <div className='md:flex-grow'>
               <p className='leading-relaxed'>Skills: {user.skills}</p>
-              <button className='text-blue-400 inline-flex items-center mt-4'>
-                Contact
-                <svg
-                  className='w-4 h-4 ml-2'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  fill='none'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <path d='M5 12h14'></path>
-                  <path d='M12 5l7 7-7 7'></path>
-                </svg>
-              </button>
+              <p className='leading-relaxed'>Interests: {user.interests}</p>
+              <p className='leading-relaxed'>Contact: {user.contact}</p>
             </div>
           </div>
         );
