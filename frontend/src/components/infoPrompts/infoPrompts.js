@@ -22,6 +22,7 @@ const InfoPrompts = () => {
         majors: majors,
         skills: skills,
         interests: interests,
+        status: 0,
       });
       navigate("/main");
     } catch (err) {
