@@ -5,19 +5,19 @@ import { db } from "../../firebase";
 const UserCard = () => {
   const [users, setUsers] = useState([
     {
-      name: "some name",
-      majors: "CS",
-      skills: "",
-      contact: "jiashu.huang@vanderbilt.edu",
-      interests: "",
+      name: "placeholder name",
+      majors: "placeholder major",
+      skills: "placeholder skills",
+      contact: "placeholder@email.com",
+      interests: "placeholder interests",
       status: 0,
     },
     {
-      name: "abc",
-      majors: "CS",
-      skills: "",
-      contact: "123456",
-      interests: "idk what i'm doing",
+      name: "placeholder name",
+      majors: "placeholder major",
+      skills: "placeholder skills",
+      contact: "placeholder@email.com",
+      interests: "placeholder interests",
       status: 1,
     },
   ]);
