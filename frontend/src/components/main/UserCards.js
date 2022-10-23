@@ -66,7 +66,6 @@ const UserCard = () => {
             <div className='md:flex-grow'>
               <p className='leading-relaxed'>Skills: {user.skills}</p>
               <p className='leading-relaxed'>Interests: {user.interests}</p>
-              <p className='leading-relaxed'>Contact: {user.contact}</p>
             </div>
           </div>
         );
