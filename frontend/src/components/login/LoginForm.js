@@ -21,6 +21,7 @@ const LoginForm = () => {
   const handleGoogleSignIn = async () => {
     try {
       googleSignIn();
+      navigate("/main");
     } catch (error) {
       console.log(error);
     }
@@ -53,8 +54,11 @@ const LoginForm = () => {
   // Page structure
   return (
     <section class='text-gray-400 bg-gradient-to-l from-gray-700 via-gray-900 to-black body-font relative'>
-      <div class='container px-5 py-24 mx-auto'>
+      <div class='container px-5 py-10 mx-auto'>
         <div class='lg:w-1/2 md:w-2/3 mx-auto'>
+          <p for='Email' class='leading-7 text-center text-gray-400'>
+              To view participants and create a profile:
+            </p>
           <div class='flex flex-wrap -m-2'>
             <div class='p-2 w-full'>
               <div class='relative'>
@@ -99,9 +103,13 @@ const LoginForm = () => {
           </div>
         </div>
 
-        <p className='text-center leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto'>
+        <p className='text-center leading-relaxed xl:w-2/4 lg:w-3/4 py-3 mx-auto'>
           or
         </p>
+
+        <p for='Email' class='leading-7 text-center text-gray-400'>
+              To only view participants:
+            </p>
 
         <div class='p-2 w-full'>
           <GoogleButton
