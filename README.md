@@ -3,6 +3,7 @@ VandyHacks IX 2022
 
 Run
 ```
+cd frontend
 npm install
 npm start
 ```
